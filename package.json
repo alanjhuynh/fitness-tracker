@@ -1,0 +1,30 @@
+{
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "app": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanjhuynh/fitness-tracker.git"
+  },
+  "author": "Alan Huynh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanjhuynh/fitness-tracker/issues"
+  },
+  "homepage": "https://github.com/alanjhuynh/fitness-tracker#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "validation": "0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

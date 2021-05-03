@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+      "mongodb://<username>:<password>@localhost:27017"
+  }
