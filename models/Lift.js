@@ -13,9 +13,12 @@ const LiftSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  weight: {
+    type: Number,
+    required: true
+  },
   metric: {
-    type: Boolean,
-    default: false
+    type: String
   },
   note: {
     type: String
