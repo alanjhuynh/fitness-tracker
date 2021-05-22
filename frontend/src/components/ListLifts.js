@@ -28,7 +28,7 @@ class ListLifts extends Component {
   };
 
   componentDidUpdate(prevstate) {
-    if (prevstate.addLift!=this.state.addLift)
+    if (prevstate.addLift !== this.state.addLift)
     {
       axios
       .get('http://localhost:8080/api/lifts')
