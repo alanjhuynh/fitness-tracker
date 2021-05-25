@@ -135,7 +135,7 @@ class CreateLift extends Component {
                 </div>
                 <div className='form-group'>
                   <input
-                    type='date'
+                    type="datetime-local"
                     placeholder='today'//{today} //TO-DO: make today default date
                     name='date'
                     className='form-control'
