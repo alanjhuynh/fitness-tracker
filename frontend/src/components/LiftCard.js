@@ -54,7 +54,7 @@ class LiftCard extends Component {
                     <p className="centered">setxrep</p>
                   </div>
                   <div className="col-sm" >
-                    <p> {lift.note} {lift._id}</p> 
+                    <p> {lift.note}</p> 
                   </div>                  
                 </div>
               </div>

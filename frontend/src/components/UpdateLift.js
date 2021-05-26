@@ -35,6 +35,7 @@ class UpdateLift extends Component {
 
     axios
         .put('http://localhost:8080/api/lifts/'+ this.props.children, data)
+        .then(this.onClose)
         .catch(err => {
         console.log(`Error when trying to create lift: ${err}`);
         })
@@ -50,9 +51,8 @@ class UpdateLift extends Component {
             return null;
         }
         return (
-            <div>
-                
-                <div>Hello World {this.props.children}</div>
+            <div class='update-modal'>
+                <div class='modal-content'>
                 <div>
                     <div className="container">
                     <div className="row">
@@ -145,13 +145,17 @@ class UpdateLift extends Component {
                                 type="submit"
                                 className="btn btn-outline-warning btn-block mt-4"
                             />
+                            <button className="btn btn-outline-warning btn-block mt-4" onClick={this.onClose}>Close</button>
                         </form>
                     </div>
                     </div>
+                    
                     </div>
+                
                 </div>
                 
-                <button onClick={this.onClose}>Close</button>
+                
+            </div>
             </div>
         
         )
