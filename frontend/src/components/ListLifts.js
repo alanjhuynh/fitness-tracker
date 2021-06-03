@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LiftCard from './LiftCard';
 import CreateLift from './CreateLift'
 
@@ -67,10 +67,34 @@ class ListLifts extends Component {
     return ( 
       
         <div className="row">
-          <div className="col padding">
-            <CreateLift addLift={this.addLift}/>
-          </div>
-          <div className="col padding">
+          <div className="col-sm-3 sidebar bg-dark">
+            
+              <br></br><br></br>
+              <h1 class="text-white centered">TWO PLATE</h1>
+              <hr class="text-white"></hr>
+
+              <Link to='/dashboard'> 
+                <h4 class="text-white centered active">
+                <span class="icon text-white">
+                  <i class="fas fa-chart-line"></i>
+                </span>
+                  dashboard
+                </h4>
+              </Link>
+
+              <Link to='/'> 
+                <h4 class="text-white centered">
+                <span class="icon text-white">
+                <i class="fas fa-home"></i>
+                </span>
+                  landing page
+                </h4>
+              </Link>
+
+              <CreateLift addLift={this.addLift}/>
+            </div>
+
+          <div className="col padding main">
             {liftList}
           </div>
         </div>

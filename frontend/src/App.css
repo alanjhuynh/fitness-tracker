@@ -81,3 +81,19 @@ h1, h2, h3, h4, h5, p
   border: 1px solid #888;
   width: 40%; 
 }
+
+.body {
+  overflow-x:hidden;
+}
+
+.sidebar {
+  height: 100%; 
+  width: 25%; 
+  position: fixed; 
+  z-index: 1; 
+  overflow-x: hidden;
+}
+
+.main {
+  margin-left: 25%; 
+}
