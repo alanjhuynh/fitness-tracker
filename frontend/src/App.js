@@ -6,6 +6,7 @@ import './App.css';
 
 import LandingPage from './components/LandingPage';
 import ListLifts from './components/ListLifts';
+import Register from './components/Register';
 //import CreateLift from './components/CreateLift';
 //import UpdateLift from './components/UpdateLift';
 //import LiftCard from './components/LiftCard';
@@ -17,6 +18,7 @@ class App extends Component {
         <div>
           <Route exact path='/' component={LandingPage} />
           <Route path='/dashboard' component={ListLifts} />
+          <Route path='/register' component={Register} />
 
         </div>
       </Router>
