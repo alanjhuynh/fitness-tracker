@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const LiftSchema = new mongoose.Schema({
+  userId: {
+    type: Number,
+  },
   name: {
     type: String,
     required: true
@@ -26,7 +29,7 @@ const LiftSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
 });
 
 module.exports = Lift = mongoose.model('lift', LiftSchema);
