@@ -12,9 +12,25 @@ import Login from './components/Login';
 //import UpdateLift from './components/UpdateLift';
 //import LiftCard from './components/LiftCard';
 
+import { UserContext } from './context/UserContext';
+
 class App extends Component {
+  static contextType = UserContext;
+ 
   render() {
-    return (
+    console.log(this.context);
+    console.log(this.context[0].token)
+    
+    return !(this.context[0].token) ? ( 
+      <Router>
+        <div>
+          <Route exact path='/' component={LandingPage} />
+          <Route path='/register' component={Register} />
+          <Route path='/login' component={Login} />
+
+        </div>
+      </Router>
+    ) : (
       <Router>
         <div>
           <Route exact path='/' component={LandingPage} />

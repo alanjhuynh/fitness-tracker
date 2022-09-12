@@ -1,13 +1,15 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import '../App.css';
 import axios from 'axios';
+import { UserContext } from '../context/UserContext'
 
 function Register(props) {
 
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [userContext, setUserContext] = useContext(UserContext);
 
     let onSubmit = (e) => {
         e.preventDefault();
@@ -21,9 +23,14 @@ function Register(props) {
         axios
             .post('http://localhost:8080/api/users/register', data)
             .then(res => {
+                console.log(res);
                 setEmail('');
                 setUsername('');
                 setPassword('');
+                const data = res.data;
+                setUserContext(oldValues => {
+                    return { ...oldValues, token: data.token }
+                  })
             })
             .catch(err => {
                 console.log(err);

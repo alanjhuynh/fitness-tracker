@@ -1,12 +1,14 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import '../App.css';
 import axios from 'axios';
+import { UserContext } from '../context/UserContext'
 
 function Login(props) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [userContext, setUserContext] = useContext(UserContext)
 
     let onSubmit = (e) => {
         e.preventDefault();
@@ -19,8 +21,14 @@ function Login(props) {
         axios
             .post('http://localhost:8080/api/users/login', data)
             .then(res => {
+                console.log(res);
+                console.log(res.data);
                 setUsername('');
                 setPassword('');
+                const data = res.data;
+                setUserContext(oldValues => {
+                    return { ...oldValues, token: data.token }
+                  })
             })
             .catch(err => {
                 console.log(err);
